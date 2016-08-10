@@ -1,11 +1,13 @@
-#For testing test2.py
+#Modified
+#For testing any program
 
-import test2
+pgm=raw_input("Enter name of file to be Tested:")
+import pgm
 
 total_tests = passed_tests = 0
 
-for symbol in dir(test2):
-    attr = getattr(test2, symbol)
+for symbol in dir(pgm):
+    attr = getattr(pgm, symbol)
     if (callable(attr) and attr.__name__.startswith('test')):
         if attr():
             passed_tests += 1
